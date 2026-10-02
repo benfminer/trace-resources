@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRACE Referral Guide</title>
+<meta name="description" content="Staff referral guide for TRACE, San Diego Unified's 18 to 22 transition program: who to call, in what order, and how each resource helps a student. Links checked October 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#F4F2ED; --ink:#141414; --muted:#5B5B57; --surface:#FFFFFF;
+  --dark:#141414; --on-dark:#F4F2ED; --on-dark-muted:#B9B6AE;
+  --accent:#F2B33D; --line:#DEDAD0;
+  --d-learn:#F7E08A; --d-emp:#9FC5E8; --d-comm:#BFD8B8; --d-il:#F3C9A0; --d-sa:#D5C6F0; --d-rec:#F4B6B6;
+  --display:"Inter Tight", "Arial Narrow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --r-lg:28px; --r-md:18px; --r-sm:10px;
+  --gutter:clamp(16px, 4vw, 56px);
+  --maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:72px}
+body{margin:0; background:var(--canvas); color:var(--ink); font-family:var(--body); font-size:17px; line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+img,svg{display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink); outline-offset:3px; border-radius:6px}
+.dark :focus-visible{outline-color:var(--accent)}
+.skip{position:absolute; left:-999px; top:8px; background:var(--accent); color:var(--ink); padding:10px 16px; border-radius:999px; z-index:100; font-weight:600}
+.skip:focus{left:16px}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 var(--gutter)}
+h1,h2,h3{font-family:var(--display); letter-spacing:-0.035em; line-height:0.98; margin:0}
+p{margin:0 0 1em}
+
+/* nav */
+.nav{position:sticky; top:0; z-index:50; background:rgba(244,242,237,.9); backdrop-filter:saturate(1.4) blur(10px); -webkit-backdrop-filter:saturate(1.4) blur(10px); border-bottom:1px solid transparent; transition:border-color .2s}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav .wrap{display:flex; align-items:center; gap:24px; height:60px}
+.brand{font-family:var(--display); font-weight:800; font-size:19px; letter-spacing:-0.03em; text-decoration:none; display:flex; align-items:center; gap:10px; white-space:nowrap}
+.brand svg{flex:none}
+.nav ul{list-style:none; display:flex; gap:4px; margin:0 0 0 auto; padding:0; overflow-x:auto; scrollbar-width:none}
+.nav ul::-webkit-scrollbar{display:none}
+.nav a.navlink{display:block; padding:7px 12px; border-radius:999px; text-decoration:none; font-size:15px; font-weight:500; white-space:nowrap}
+.nav a.navlink:hover{background:#E9E6DD}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,6vw,80px)}
+.hero-grid{display:grid; grid-template-columns:1.35fr 1fr; gap:clamp(24px,5vw,72px); align-items:end}
+.hero h1{font-size:clamp(52px, 9.2vw, 138px); font-weight:900; letter-spacing:-0.05em; line-height:0.9}
+.hero .lede{font-size:clamp(18px,1.6vw,21px); max-width:34em; margin-top:28px; color:var(--ink)}
+.hero .lede strong{font-weight:600}
+.hero-meta{display:flex; flex-wrap:wrap; gap:10px; margin-top:28px}
+.pill{display:inline-flex; align-items:center; gap:8px; background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:7px 14px; font-size:14px; font-weight:500}
+.pill .dot{width:8px; height:8px; border-radius:50%; background:#2E7D4F}
+.btn{display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:var(--ink); border:0; border-radius:999px; padding:13px 22px; font:600 16px/1 var(--body); text-decoration:none; cursor:pointer; transition:transform .15s, box-shadow .15s}
+.btn:hover{transform:translateY(-1px); box-shadow:0 6px 18px -8px rgba(20,20,20,.5)}
+.btn.ghost{background:transparent; border:1.5px solid var(--ink)}
+.dark .btn.ghost{border-color:var(--on-dark); color:var(--on-dark)}
+.hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:32px}
+.bars{width:100%; height:auto; max-width:460px; justify-self:end}
+.bars rect{transform-box:fill-box; transform-origin:left center}
+@media (prefers-reduced-motion:no-preference){
+  .bars rect.bar{animation:grow .9s cubic-bezier(.2,.8,.2,1) both}
+  .bars rect.bar:nth-of-type(2){animation-delay:.07s}.bars rect.bar:nth-of-type(3){animation-delay:.14s}
+  .bars rect.bar:nth-of-type(4){animation-delay:.21s}.bars rect.bar:nth-of-type(5){animation-delay:.28s}.bars rect.bar:nth-of-type(6){animation-delay:.35s}
+}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.bars text{font-family:var(--body); font-size:15px; font-weight:600; fill:var(--ink)}
+
+/* domains legend */
+.domains{padding:0 0 clamp(48px,7vw,96px)}
+.legend{display:grid; grid-template-columns:repeat(6,1fr); gap:10px}
+.legend button{all:unset; box-sizing:border-box; cursor:pointer; border-radius:var(--r-md); padding:16px 16px 18px; min-height:118px; display:flex; flex-direction:column; justify-content:space-between; transition:transform .15s, box-shadow .15s; position:relative}
+.legend button:hover{transform:translateY(-3px); box-shadow:0 10px 24px -14px rgba(20,20,20,.6)}
+.legend button:focus-visible{outline:3px solid var(--ink); outline-offset:3px}
+.legend b{font-family:var(--display); font-size:20px; font-weight:800; letter-spacing:-0.02em; line-height:1.05}
+.legend span{font-size:14px}
+.legend button[aria-pressed="true"]{box-shadow:inset 0 0 0 3px var(--ink)}
+.legend button[aria-pressed="true"]::after{content:""; position:absolute; top:14px; right:14px; width:12px; height:12px; border-radius:50%; background:var(--ink)}
+.sec-head{display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:28px; flex-wrap:wrap}
+.sec-head h2{font-size:clamp(36px,5.4vw,72px); font-weight:800}
+.sec-head p{max-width:36em; color:var(--muted); margin:0}
+.dark .sec-head p{color:var(--on-dark-muted)}
+
+/* dark order section */
+.dark{background:var(--dark); color:var(--on-dark)}
+.order{padding:clamp(64px,9vw,128px) 0}
+.steps{list-style:none; margin:0; padding:0; display:grid; gap:14px}
+.step{display:grid; grid-template-columns:96px 1fr; gap:24px; padding:28px 0; border-top:1px solid #34332F}
+.step:last-child{border-bottom:1px solid #34332F}
+.step .num{font-family:var(--display); font-weight:900; font-size:72px; line-height:.8; letter-spacing:-0.05em; color:var(--accent)}
+.step h3{font-size:clamp(26px,3vw,38px); font-weight:800; margin-bottom:12px}
+.step p,.step li{color:var(--on-dark); max-width:62ch}
+.step ul{margin:0 0 0 1.1em; padding:0}
+.step li{margin-bottom:6px}
+.step .aside{color:var(--on-dark-muted); font-size:15px}
+.lanes{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
+.lane{display:inline-flex; align-items:center; gap:8px; color:var(--ink); border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; text-decoration:none; border:0; cursor:pointer; font-family:var(--body)}
+.lane:hover{filter:brightness(1.05); transform:translateY(-1px)}
+.callout{margin-top:40px; display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+.callout article{background:#22211E; border-radius:var(--r-md); padding:24px}
+.callout h3{font-size:22px; font-weight:800; margin-bottom:10px; letter-spacing:-0.02em; line-height:1.1}
+.callout p{color:#D9D6CE; font-size:15.5px; margin:0}
+
+/* matcher */
+.matcher{padding:clamp(64px,9vw,128px) 0}
+.match-grid{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); gap:24px; align-items:start}
+.situations{display:flex; flex-direction:column; gap:8px}
+.situations button{all:unset; box-sizing:border-box; cursor:pointer; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-sm); padding:14px 18px; font-weight:500; font-size:16px; line-height:1.35; transition:background .15s, transform .15s}
+.situations button:hover{transform:translateX(3px)}
+.situations button:focus-visible{outline:3px solid var(--ink); outline-offset:2px}
+.situations button[aria-pressed="true"]{background:var(--ink); color:var(--on-dark); border-color:var(--ink)}
+.answer{position:sticky; top:84px; background:var(--surface); border-radius:var(--r-lg); padding:clamp(22px,3vw,36px); min-height:320px; border:1px solid var(--line)}
+.answer h3{font-size:clamp(26px,2.6vw,34px); font-weight:800; margin-bottom:14px}
+.answer .why{color:var(--muted); margin-bottom:20px}
+.answer ol{list-style:none; margin:0; padding:0; display:grid; gap:10px}
+.answer li{display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:start; padding:14px; border-radius:var(--r-sm); background:var(--canvas)}
+.answer li .tag{font-family:var(--display); font-weight:800; font-size:13px; background:var(--accent); border-radius:999px; padding:4px 10px; white-space:nowrap}
+.answer li .tag.local{background:var(--d-comm)}
+.answer li .tag.tool{background:var(--d-sa)}
+.linkbtn{all:unset; cursor:pointer; font-weight:700; text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:3px; text-decoration-color:var(--accent)}
+.linkbtn:hover{text-decoration-color:var(--ink)}
+.linkbtn:focus-visible{outline:3px solid var(--ink); outline-offset:3px; border-radius:4px}
+.answer li p{margin:4px 0 0; font-size:15px; color:var(--muted)}
+.answer .empty{color:var(--muted)}
+.answer .empty svg{margin-bottom:18px}
+
+/* resources */
+.resources{padding:clamp(56px,8vw,112px) 0 clamp(40px,6vw,72px)}
+.filterbar{display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:-8px 0 28px}
+.filterbar .status{font-size:15px; color:var(--muted); margin-right:6px}
+.chip{all:unset; box-sizing:border-box; cursor:pointer; border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; border:1.5px solid transparent}
+.chip[aria-pressed="true"]{border-color:var(--ink)}
+.chip:focus-visible{outline:3px solid var(--ink); outline-offset:2px}
+.chip.clear{background:transparent; border-color:var(--line)}
+.group{margin-top:44px}
+.group-head{display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:16px; flex-wrap:wrap}
+.group-head h3{font-size:clamp(26px,3vw,40px); font-weight:800; margin-bottom:8px}
+.group-head p{margin:0; color:var(--muted); max-width:44em; font-size:16px}
+.rail-wrap{position:relative}
+.rail{--edge:calc((100vw - min(100vw, var(--maxw))) / 2 + var(--gutter)); display:grid; grid-auto-flow:column; grid-auto-columns:minmax(330px, 380px); gap:16px; overflow-x:auto; scroll-snap-type:x proximity; padding:6px var(--edge) 22px; margin:0 calc(-1 * var(--edge)); scroll-padding:0 var(--edge); scrollbar-width:thin}
+.rail:focus-visible{outline-offset:-3px}
+.rail-ctrl{display:flex; gap:8px}
+.rail-ctrl button{all:unset; cursor:pointer; width:40px; height:40px; border-radius:50%; border:1.5px solid var(--ink); display:grid; place-items:center}
+.rail-ctrl button:hover{background:var(--ink); color:var(--canvas)}
+.rail-ctrl button:focus-visible{outline:3px solid var(--ink); outline-offset:2px}
+.rail-ctrl button[disabled]{opacity:.3; cursor:default; background:transparent; color:var(--ink)}
+.card{scroll-snap-align:start; background:var(--surface); border-radius:var(--r-lg); padding:24px 24px 20px; display:flex; flex-direction:column; gap:12px; min-height:380px; border:1px solid var(--line); transition:transform .2s, box-shadow .2s, opacity .25s}
+.card:hover{transform:translateY(-4px); box-shadow:0 18px 36px -24px rgba(20,20,20,.55)}
+.card.dim{opacity:.28}
+.card.dim:hover{opacity:.6}
+.card .kind{font-size:13.5px; font-weight:600; color:var(--muted)}
+.card h4{font-family:var(--display); font-size:27px; font-weight:800; letter-spacing:-0.03em; line-height:1.02; margin:0}
+.card .one{margin:0; font-size:16px}
+.card .who{margin:0; font-size:14.5px; color:var(--muted)}
+.tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:auto}
+.tag-d{font-size:12.5px; font-weight:600; border-radius:999px; padding:3px 10px; color:var(--ink)}
+.card-foot{display:flex; align-items:center; justify-content:space-between; gap:10px; padding-top:14px; border-top:1px solid var(--line)}
+.checked{display:inline-flex; align-items:center; gap:6px; font-size:12.5px; color:var(--muted); font-weight:500; white-space:nowrap}
+.checked svg{flex:none}
+.open{all:unset; cursor:pointer; background:var(--ink); color:var(--canvas); border-radius:999px; padding:9px 16px; font-weight:600; font-size:14.5px; white-space:nowrap}
+.open:hover{background:#333}
+.open:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+.flag{display:inline-block; background:var(--accent); border-radius:6px; padding:2px 8px; font-size:12.5px; font-weight:700; margin-left:2px}
+
+/* VCU honesty */
+.honest{background:var(--accent); padding:clamp(56px,8vw,112px) 0}
+.honest-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:clamp(24px,5vw,72px); align-items:start}
+.honest h2{font-size:clamp(40px,6vw,84px); font-weight:900; letter-spacing:-0.045em}
+.honest p{font-size:18px; max-width:36em}
+.handoff{display:grid; gap:10px}
+.handoff div{background:var(--canvas); border-radius:var(--r-md); padding:18px 20px}
+.handoff b{font-family:var(--display); font-size:20px; letter-spacing:-0.02em; display:block; margin-bottom:4px}
+.handoff span{font-size:15.5px}
+
+sit.querySelector('button').click();
+/* corrections */
+.notes{padding:clamp(56px,8vw,112px) 0}
+.notes-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}
+.note{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-md); padding:22px 24px}
+.note h3{font-size:21px; font-weight:800; letter-spacing:-0.02em; margin-bottom:8px; line-height:1.15}
+.note p{margin:0; font-size:15.5px; color:var(--ink)}
+.note .src{display:block; margin-top:10px; font-size:13.5px; color:var(--muted)}
+
+/* footer */
+footer{padding:56px 0 64px}
+.foot-grid{display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:32px}
+footer h2{font-size:30px; font-weight:800; margin-bottom:12px}
+footer p{color:var(--on-dark-muted); font-size:15px; margin:0 0 8px}
+footer a{color:var(--on-dark)}
+
+/* dialog */
+dialog{border:0; padding:0; border-radius:var(--r-lg); width:min(880px, calc(100vw - 24px)); max-height:calc(100vh - 32px); background:var(--canvas); color:var(--ink); box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+dialog::backdrop{background:rgba(20,20,20,.55); backdrop-filter:blur(3px)}
+.dlg-head{position:sticky; top:0; z-index:2; padding:26px 28px 20px; display:grid; grid-template-columns:1fr auto; gap:16px; align-items:start; background:var(--canvas); border-bottom:1px solid var(--line)}
+.dlg-head h2{font-size:clamp(30px,4.2vw,48px); font-weight:900}
+.dlg-head .kind{font-size:14px; color:var(--muted); font-weight:600; margin-bottom:8px}
+.dlg-head .tags{margin-top:12px}
+.close{all:unset; cursor:pointer; width:44px; height:44px; border-radius:50%; background:var(--ink); color:var(--canvas); display:grid; place-items:center}
+.close:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+.dlg-body{padding:24px 28px 32px; display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:28px}
+.dlg-body h3{font-size:19px; font-weight:800; letter-spacing:-0.015em; margin:0 0 8px; line-height:1.2}
+.dlg-body section{margin-bottom:22px}
+.dlg-body p{margin:0 0 .6em}
+.dlg-body ol,.dlg-body ul{margin:0; padding-left:1.25em}
+.dlg-body li{margin-bottom:8px}
+.dlg-body .gotchas li::marker{color:#B07A12}
+.contact{background:var(--surface); border-radius:var(--r-md); padding:20px; border:1px solid var(--line); align-self:start; position:sticky; top:12px}
+.contact dl{margin:0}
+.contact dt{font-size:13px; color:var(--muted); font-weight:600; margin-top:12px}
+.contact dt:first-child{margin-top:0}
+.contact dd{margin:2px 0 0; font-size:15.5px; overflow-wrap:break-word}
+.contact a{font-weight:600; text-decoration-color:var(--accent); text-decoration-thickness:2px; text-underline-offset:3px}
+.contact .linklist{list-style:none; padding:0; margin:4px 0 0}
+.contact .linklist li{margin-bottom:6px}
+.contact .checked{margin-top:16px}
+
+/* reveal */
+.reveal{opacity:1}
+@media (prefers-reduced-motion:no-preference){
+  .js .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1)}
+  .js .reveal.in{opacity:1; transform:none}
+}
+.static .reveal{opacity:1 !important; transform:none !important}
+.static .bars rect.bar{animation:none !important}
+
+.sr-only{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+
+/* responsive */
+@media (max-width:1020px){
+  .legend{grid-template-columns:repeat(3,1fr)}
+  .callout{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:820px){
+  .hero-grid,.match-grid,.honest-grid{grid-template-columns:1fr}
+  .bars{justify-self:start; max-width:380px}
+  .answer{position:static}
+  .notes-grid{grid-template-columns:1fr}
+  .dlg-body{grid-template-columns:1fr}
+  .contact{position:static}
+  .nav ul .hide-sm{display:none}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .legend{grid-template-columns:repeat(2,1fr)}
+  .legend button{min-height:96px}
+  .step{grid-template-columns:1fr; gap:6px}
+  .step .num{font-size:52px}
+  .rail{grid-auto-columns:86%}
+  .foot-grid{grid-template-columns:1fr}
+  .dlg-head,.dlg-body{padding-left:18px; padding-right:18px}
+  .nav .wrap{gap:12px}
+  .brand .full{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="TRACE Referral Guide, back to top">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect x="0" y="1" width="26" height="3.4" rx="1.7" fill="#9FC5E8"/><rect x="0" y="5.4" width="19" height="3.4" rx="1.7" fill="#F3C9A0"/><rect x="0" y="9.8" width="23" height="3.4" rx="1.7" fill="#BFD8B8"/><rect x="0" y="14.2" width="16" height="3.4" rx="1.7" fill="#D5C6F0"/><rect x="0" y="18.6" width="21" height="3.4" rx="1.7" fill="#F7E08A"/><rect x="0" y="23" width="13" height="3" rx="1.5" fill="#F4B6B6"/></svg>
+      <span>TRACE <span class="full">Referral Guide</span></span>
+    </a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a class="navlink" href="#order">Order</a></li>
+        <li><a class="navlink" href="#matcher">Matcher</a></li>
+        <li><a class="navlink" href="#resources">Resources</a></li>
+        <li class="hide-sm"><a class="navlink" href="#handoffs">Handoffs</a></li>
+        <li><a class="navlink" href="#notes">Notes</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 id="hero-h">Who to call, and in what order.</h1>
+        <p class="lede">Eighteen referral resources for TRACE students, ages 18 to 22, with <strong>what each one actually does, who qualifies, and the exact first step</strong>. Written for paras, case managers and teachers. Every fact was checked against the organization's own site.</p>
+        <div class="hero-meta">
+          <span class="pill"><span class="dot" aria-hidden="true"></span>Every link checked October 2026</span>
+          <span class="pill">18 resources</span>
+          <span class="pill">Staff reference</span>
+        </div>
+        <div class="hero-cta">
+          <a class="btn" href="#order">Start with the order</a>
+          <a class="btn ghost" href="#matcher">Find by situation</a>
+        </div>
+      </div>
+      <svg class="bars" viewBox="0 0 460 330" role="img" aria-labelledby="bars-t">
+        <title id="bars-t">TRACE's six service domains, each shown as a colored bar sized by how many resources in this guide serve it</title>
+        <g id="barsG"></g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="domains" aria-labelledby="dom-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="dom-h" class="sr-only">TRACE service domains</h2>
+        <p style="color:var(--ink);max-width:52em">TRACE names six service domains, and each one ends the same way: a linkage to a community agency. Every resource below is tagged by the domains it serves. Tap a domain to highlight its resources.</p>
+      </div>
+      <div class="legend" id="legend"></div>
+    </div>
+  </section>
+
+  <section class="dark order" id="order" aria-labelledby="order-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 id="order-h">Referral order of operations</h2>
+        <p>DOR first for almost everyone, but not alone. Most of these run at the same time. Waiting for one agency before calling the next is how students exit with nothing in place.</p>
+      </div>
+      <ol class="steps">
+        <li class="step reveal">
+          <div class="num" aria-hidden="true">1</div>
+          <div>
+            <h3>Send the DR 203 to DOR Student Services</h3>
+            <p>For every student who is 16 to 21, and for 22-year-olds still in special education. This is a request for Pre-Employment Transition Services, not a VR application, and DOR's Order of Selection does not touch it. A school official's signature can stand in for IEP or 504 copies. The student signs; a parent signs only if the student is under 18, a conservator if the student is conserved.</p>
+            <div class="lanes"><button class="lane" data-open="dor" style="background:var(--d-emp)">DOR Student Services</button><button class="lane" data-open="tpp" style="background:var(--d-emp)">TPP at TRACE</button></div>
+          </div>
+        </li>
+        <li class="step reveal">
+          <div class="num" aria-hidden="true">2</div>
+          <div>
+            <h3>The same week, start the parallel lanes</h3>
+            <ul>
+              <li>Student has or may have an intellectual or developmental disability: check regional center status. If they are not a client, an adult student (or conservator) starts the SDRC Initial Contact Form. Eligibility can take up to 120 days, so do not wait.</li>
+              <li>Independent living, benefits questions or self-advocacy: Access to Independence takes self-referrals with no DOR eligibility needed.</li>
+              <li>Friends and free time: social and recreation programs never depend on DOR. Refer whenever the student is ready.</li>
+            </ul>
+            <div class="lanes"><button class="lane" data-open="sdrc" style="background:var(--d-il)">San Diego Regional Center</button><button class="lane" data-open="a2i" style="background:var(--d-sa)">Access to Independence</button><button class="lane" data-open="trs" style="background:var(--d-rec)">Therapeutic Recreation</button></div>
+          </div>
+        </li>
+        <li class="step reveal">
+          <div class="num" aria-hidden="true">3</div>
+          <div>
+            <h3>Work experience runs in-house, alongside</h3>
+            <p>TPP, WorkAbility I and District-Hire placements happen through TRACE itself. They do not wait for outside agencies. If the student is an SDRC client, the Paid Internship Program can add hours, with both the IEP and IPP teams agreeing.</p>
+            <p class="aside">Whether one student can hold WorkAbility I, TPP and an SDRC paid internship at once is a reasonable inference from the state's program chart, not a written rule. Confirm locally before promising hours.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <div class="num" aria-hidden="true">4</div>
+          <div>
+            <h3>Decide on the full VR application, with eyes open</h3>
+            <p>Right now every newly eligible VR applicant goes on a waiting list, served by priority category, with a status letter every six months. Students who apply keep their Student Services while eligibility is decided. Applying earlier puts the student in line sooner. Full VR status is what opens WorkAbility III and Able-Disabled Advocacy's DOR job-search services.</p>
+            <div class="lanes"><button class="lane" data-open="wa3" style="background:var(--d-learn)">WorkAbility III</button><button class="lane" data-open="ada" style="background:var(--d-emp)">Able-Disabled Advocacy</button></div>
+          </div>
+        </li>
+        <li class="step reveal">
+          <div class="num" aria-hidden="true">5</div>
+          <div>
+            <h3>Before exit, make the handoff warm</h3>
+            <p>Invite DOR and the SDRC service coordinator to the IEP (with written consent). Name the adult provider who picks up on day one after TRACE: a DOR counselor, a regional center vendor, a day program, a college. For students not aiming at competitive employment right now, a regional-center-funded day program such as Promising Futures is a real pathway, and the employment goal can stay in the plan.</p>
+            <div class="lanes"><button class="lane" data-open="pf" style="background:var(--d-il)">Promising Futures</button></div>
+          </div>
+        </li>
+      </ol>
+      <div class="callout">
+        <article class="reveal">
+          <h3>Order of Selection leaves the student lane open</h3>
+          <p>DOR's own page: "OOS does not impact DOR Student Services. Those services continue to be available and open to all potentially eligible students with disabilities ages 16 through 21."</p>
+        </article>
+        <article class="reveal">
+          <h3>A 22-year-old still counts</h3>
+          <p>DOR's site says "16 through 21," but 9 CCR 7026.5 keeps a student who turns 22 while in special education covered for a set period tied to the birthday month. Cite it if a student is turned away on age.</p>
+        </article>
+        <article class="reveal">
+          <h3>Staff can do almost all of it</h3>
+          <p>School staff can fill out, certify and submit the DR 203 and drive the process. Staff cannot consent for the student or family, and cannot file the VR application or sign the IPE for them.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="matcher" id="matcher" aria-labelledby="match-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 id="match-h">Which resource for which situation</h2>
+        <p>Pick what is going on with the student. You get the local partner, any free tool that sets it up, and the order to use them in.</p>
+      </div>
+      <div class="match-grid">
+        <div class="situations" id="situations" role="group" aria-label="Student situations"></div>
+        <div class="answer" id="answer" aria-live="polite">
+          <div class="empty">
+            <svg width="72" height="48" viewBox="0 0 72 48" aria-hidden="true"><rect x="0" y="0" width="44" height="12" rx="6" fill="#9FC5E8"/><rect x="0" y="18" width="62" height="12" rx="6" fill="#F2B33D"/><rect x="0" y="36" width="30" height="12" rx="6" fill="#BFD8B8"/></svg>
+            <h3>Choose a situation</h3>
+            <p>Start on the left. Each answer opens the full notes for the resources it names.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="resources" id="resources" aria-labelledby="res-h" style="background:#ECE9E1">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 id="res-h">The resources</h2>
+        <p>Grouped by what kind of help they are. Swipe or scroll each row. Open a card for eligibility, the exact first step, contacts, and the things that trip people up.</p>
+      </div>
+      <div class="filterbar" id="filterbar" role="group" aria-label="Filter by TRACE domain"></div>
+      <div id="groups"></div>
+    </div>
+  </section>
+
+  <section class="honest" id="handoffs" aria-labelledby="hon-h">
+    <div class="wrap honest-grid">
+      <div class="reveal">
+        <h2 id="hon-h">VCU is curriculum, not a service provider.</h2>
+        <p style="margin-top:24px">VCU's two centers (CTI and the RRTC) give TRACE research-backed lessons, assessments and staff training for free. No student can be referred to VCU for services. Their materials were built for Virginia, so swap Virginia DARS for California DOR and local partners wherever they come up.</p>
+        <p>What no online course replaces is a warm handoff: a staff member who knows the DOR counselor, the WorkAbility III coordinator or the Able-Disabled Advocacy youth director by name, and makes the introduction. VCU supplies the what and the why. San Diego partners deliver the how and the where.</p>
+      </div>
+      <div class="handoff reveal" aria-label="What a warm handoff looks like">
+        <div><b>Call with the student, not for them</b><span>Speakerphone in the room, student says their name and what they want.</span></div>
+        <div><b>Send the paper ahead</b><span>Signed DR 203, assessment results, a short strengths note. Nothing with more PII than the agency needs.</span></div>
+        <div><b>Book the first meeting before you hang up</b><span>Date, place, and how the student will get there.</span></div>
+        <div><b>Close the loop</b><span>Check after the first appointment. Log who the student's person is now.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="notes" id="notes" aria-labelledby="notes-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 id="notes-h">What changed from the old PDF</h2>
+        <p>This guide replaces an earlier "Student Transition Referral Guide" PDF. These are the corrections, so nobody repeats the old version.</p>
+      </div>
+      <div class="notes-grid" id="corrections"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="dark" aria-labelledby="foot-h">
+  <div class="wrap foot-grid">
+    <div>
+      <h2 id="foot-h">TRACE</h2>
+      <p>San Diego Unified's transition program for students ages 18 to 22.</p>
+      <p>4063 Polk Ave., San Diego, CA 92105<br><a href="tel:+16193446120">(619) 344-6120</a><br><a href="https://trace.sandiegounified.org/">trace.sandiegounified.org</a></p>
+    </div>
+    <div>
+      <p><strong style="color:var(--on-dark)">Links checked October 2026.</strong> Every link was opened and its final address inspected. Phone numbers come from each organization's own site unless a card says otherwise.</p>
+    </div>
+    <div>
+      <p>A staff reference compiled by TRACE staff. It is not an official San Diego Unified School District publication and does not replace district procedures.</p>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+  </div>
+</footer>
+
+<dialog id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <div>
+      <div class="kind" id="dlg-kind"></div>
+      <h2 id="dlg-title"></h2>
+      <div class="tags" id="dlg-tags"></div>
+    </div>
+    <button class="close" id="dlg-close" aria-label="Close"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+  </div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>
+
+<script>
+(function(){
+var root=document.documentElement;
+var isStatic=/[?&]static\b/.test(location.search);
+root.classList.add('js'); if(isStatic) root.classList.add('static');
+
+var D={
+  learn:{name:'Adult Learning',color:'var(--d-learn)',hex:'#F7E08A',blurb:'Diploma, HSE, basic skills, college'},
+  emp:{name:'Employment',color:'var(--d-emp)',hex:'#9FC5E8',blurb:'Job search, coaching, placement'},
+  comm:{name:'Community/Mobility',color:'var(--d-comm)',hex:'#BFD8B8',blurb:'Transit, IDs, documents'},
+  il:{name:'Independent Living',color:'var(--d-il)',hex:'#F3C9A0',blurb:'Money, home, health'},
+  sa:{name:'Self-Advocacy',color:'var(--d-sa)',hex:'#D5C6F0',blurb:'Rights, disclosure, social skills'},
+  rec:{name:'Recreation/Leisure',color:'var(--d-rec)',hex:'#F4B6B6',blurb:'Parks, sports, clubs'}
+};
+var ORDER=['emp','il','comm','sa','learn','rec'];
+
+var G=[
+ {id:'agency',name:'Agency referrals',blurb:'The systems that fund services during and after TRACE. These are the referrals with paperwork.'},
+ {id:'community',name:'Community programs',blurb:'Nonprofits that deliver training, independent living support and day programs.'},
+ {id:'social',name:'Social life and recreation',blurb:'The Recreation/Leisure domain, plus the friendships students lose when school ends.'},
+ {id:'tools',name:'Free tools for staff',blurb:'Curriculum, assessments and research. Use them in class. They are not places to refer students.'}
+];
+
+function tel(n){return 'tel:+1'+n.replace(/\D/g,'').replace(/^1(?=\d{10}$)/,'');}
+
+var R=[
+{id:'dor',g:'agency',name:'California Department of Rehabilitation (DOR)',kind:'State agency',d:['emp','learn','sa'],
+ one:"California's vocational rehabilitation agency. For TRACE students the door that matters most is DOR Student Services.",
+ who:'Student Services: enrolled students 16 through 21 with an IEP, a 504 plan, a disability, or who are regarded as having one (22-year-olds still in special education too). Full VR: any Californian with a disability, no age limit. Free.',
+ helps:['Student Services pays for the five Pre-Employment Transition Services: job exploration counseling, work-based learning (including paid work experiences of up to 100 hours through DOR vendors such as the Arc of San Diego), counseling on college and training, work readiness training, and self-advocacy instruction.','Full VR adds job placement, supported employment, training and assistive technology under an Individualized Plan for Employment (IPE). DOR decides eligibility within 60 days of an application.'],
+ refer:['Fill out the DR 203 Student Services Plan Request (current version is Rev 07/2026). It is not a VR application.','For disability documentation, attach the IEP or 504 plan, or check "School Signature" and have a school official sign that the student is enrolled and has, or is regarded as having, the disability.','Get the student\'s signature. A parent or guardian also signs if the student is under 18. A conservator signs if the student is 18 or older and conserved. Otherwise the adult student signs alone.','Coordinate with the case manager so it goes through TRACE\'s TPP liaison, or send it to the San Diego district inbox, YouthServices_SanDiego@dor.ca.gov.','DOR meets the student and writes the DR 205 Student Services Plan. Ask for a paid work experience vendor as part of the plan.'],
+ gotchas:['Order of Selection: DOR\'s page says all newly eligible VR applicants are currently placed on a waiting list. It does not affect Student Services, and students who apply for VR keep getting Student Services while eligibility is decided.','DOR\'s public page says a flat "Age 16 through 21." A student who turns 22 while still in special education stays covered for a period set by the birthday month (9 CCR 7026.5). Expect pushback and cite the regulation.','DOR\'s online application is listed as temporarily unavailable. Full VR applications go through the local office in person, by mail or by email.','Staff can complete, certify and submit the DR 203. Staff cannot consent for the student or family.'],
+ phones:[['San Diego district office','(619) 767-2100'],['South County office, Chula Vista','(619) 426-8720']],
+ address:'7575 Metropolitan Dr., Ste. 107, San Diego, CA 92108',
+ email:'YouthServices_SanDiego@dor.ca.gov',
+ links:[['Student Services: who qualifies and how to start','https://www.dor.ca.gov/Home/StudentServices'],['DR 203 Student Services Plan Request (PDF, Rev 07/2026)','https://publicaccessstorage.blob.core.usgovcloudapi.net/publicsitefiles/DOR%20Documents/Student%20Services/DR203%20Student%20Services%20Plan%20Request%20Jul%202026.pdf'],['Order of Selection status','https://www.dor.ca.gov/Home/OrderofSelection'],['How to apply for full VR services','https://www.dor.ca.gov/Home/HowToApply'],['Find any DOR office','https://www.dor.ca.gov/Home/ContactUs']]},
+
+{id:'tpp',g:'agency',name:'Transition Partnership Program (TPP)',kind:'SDUSD and DOR contract, run by TRACE',d:['emp','sa'],
+ one:"San Diego Unified's cooperative agreement with DOR. TRACE already operates inside it, alongside WorkAbility I and District-Hire.",
+ who:'SDUSD students with disabilities, 16 to 21 under the program, which covers TRACE students 18 to 22 under the same age-22 rule as DOR Student Services. Enrollment runs through the DR 203 lane, so it stays open during Order of Selection. Free.',
+ helps:['TPP bundles DOR Student Services with job development and short-term supports delivered by district staff. It is one of about 104 TPP contracts statewide.','Students do paid work experiences on the district payroll: SDUSD pays the wages and the workers\' compensation. On the VR side, the goal after the training period is direct hire by the employer. A student can do more than one TPP work experience.'],
+ refer:['Talk to the student\'s case manager. TPP is in-house, so there is no outside agency to call.','Make sure a signed DR 203 is on file.','Match the student to a work site through TRACE\'s placement process.'],
+ gotchas:['Each program caps its own hours: about 100 per TPP work experience, about 50 for WorkAbility I. Whether one student can stack TPP, WorkAbility I and an SDRC paid internship is an inference from the state comparison chart, not a written rule.','There is nothing to "establish" here. TRACE already runs TPP.'],
+ phones:[['TRACE','(619) 344-6120']],address:'TRACE, 4063 Polk Ave., San Diego, CA 92105',
+ links:[['DOR: Transition Partnership Program','https://www.dor.ca.gov/Home/CppTPPHS']]},
+
+{id:'sdrc',g:'agency',name:'San Diego Regional Center (SDRC)',kind:'State-funded regional center',added:true,d:['il','emp','comm','rec'],
+ one:'The regional center for people with intellectual and developmental disabilities in San Diego and Imperial counties. It is the lifelong service system once school ends.',
+ who:'Anyone with a qualifying developmental disability (intellectual disability, autism, cerebral palsy, epilepsy, or a condition closely related to intellectual disability) that began before 18 and substantially limits daily life. A learning disability or a mental health diagnosis alone does not qualify. Income and immigration status do not matter. Free.',
+ helps:['SDRC funds the adult services many TRACE students will rely on after 22: supported employment, tailored day services, day programs, independent and supported living, mobility training, and social recreation.','Its Paid Internship Program pays minimum wage or more for up to 1,040 hours a year. Students 18 to 22 can do it while still at TRACE if both the IEP team and the IPP team agree.'],
+ refer:['Ask the family whether the student is already an SDRC client. If yes, get the service coordinator\'s name and, with consent, invite them to the IEP.','If not, an applicant 18 or older (or their legally appointed conservator) must start the Initial Contact Form for ages 18 and up. Staff can sit with the student while they complete it.','SDRC Intake reviews it and calls back. Eligibility must be decided within 120 days of the intake meeting, and the first Individual Program Plan (IPP) within 60 days after that.','To add a paid internship for an existing client, ask the service coordinator for an IPP meeting or addendum. SDRC\'s services page lists an employment services contact.'],
+ gotchas:['Start early. Eligibility alone can take four months, and services are planned only after that.','The old SDRC paid-internship web address is dead. Use the services page below.'],
+ phones:[['Main office','(858) 576-2996']],address:'4355 Ruffin Rd., Ste. 200, San Diego, CA 92123',email:'intake@sdrc.org',
+ links:[['Apply for services (Initial Contact Forms)','https://www.sdrc.org/apply'],['Services, including Paid Internships','https://www.sdrc.org/services']]},
+
+{id:'wa3',g:'agency',name:'WorkAbility III, San Diego Community College District',kind:'DOR and SDCCD partnership',d:['emp','learn'],
+ one:'A partnership between DOR and SDCCD that helps DOR clients who are taking college or continuing education classes get and keep jobs.',
+ who:'A DOR client, or eligible for DOR services, who attends or is willing to take credit or noncredit classes in SDCCD: City, Mesa or Miramar College, or a College of Continuing Education site. Free.',
+ helps:['The student is assigned a vocational specialist for career exploration, vocational counseling, job training and certificate programs, work experience, internships, job search, on-the-job accommodations and job retention, all tied to the student\'s IPE.','Continuing Education sites count, which makes this a natural next step from TRACE\'s Adult Learning domain.'],
+ refer:['Three ways in: the student\'s DOR counselor refers, the student\'s DSPS counselor refers, or the student contacts the WorkAbility III coordinator directly.','If the student is an SDCCD student but not yet a DOR client, the coordinator can request a referral to a WorkAbility III liaison inside DOR.','The intake takes 60 to 90 minutes with the program coordinator. Bring the IPE vocational goal if there is one.'],
+ gotchas:['The old PDF said "must be a DOR consumer, refer to DOR first." SDCCD\'s pages say a client or eligible for services, and they allow self-referral.','With Order of Selection, new VR applicants are being waitlisted. Ask the coordinator whether an eligible but waitlisted student can start.','The named coordinator is inconsistent on SDCCD\'s own pages: the program page lists Jamila DeCarli at (619) 388-6810, while the FAQ lists Shawn Fiala as acting program coordinator at (619) 388-6984. Call and ask who is coordinating now.'],
+ phones:[['Program office (FAQ page)','(619) 388-6984'],['Coordinator line (program page)','(619) 388-6810']],address:'3375 Camino Del Rio South, San Diego, CA 92108',
+ links:[['WorkAbility III program page','https://www.sdccd.edu/departments/educational-services/dsps/workforce/workability/index.aspx'],['How to apply and FAQ','https://www.sdccd.edu/departments/educational-services/dsps/workforce/workability/faq.aspx']]},
+
+{id:'ada',g:'community',name:'Able-Disabled Advocacy (Able2Work)',kind:'Nonprofit, El Cajon Blvd., City Heights',d:['emp','learn'],
+ one:'A nonprofit in TRACE\'s own zip code (92105) that runs free job training for young adults and job-search help for DOR clients.',
+ who:'Youth pre-apprenticeship: 17 and older (youth programs serve 17 to 24), legal right to work in the U.S., proof of identity, Selective Service registration for males 18 and up. DOR client services: current DOR clients ready to job search. Free.',
+ helps:['Youth: a 10-week construction pre-apprenticeship using the Multi-Craft Core (MC3) curriculum. The certificate qualifies the student to apply for registered apprenticeships in the building trades.','DOR clients: one-on-one help, job search classes, resume and cover letter help, interview coaching, a job search room, and job retention support. Separately, CAREERworks offers free CompTIA IT certifications.'],
+ refer:['Youth program: the student applies online from the youth programs page, or call the Youth Program Director, Efrain Lagunas, (619) 928-4532.','DOR client services: the student\'s DOR counselor makes the referral. A-DA says it can contact the counselor on the student\'s behalf. Ask for Cindy Lennon, (619) 231-5990 ext. 315.'],
+ gotchas:['The old PDF listed mental health services and housing assistance. The current site does not show those for youth (housing referrals appear under a veterans program). Do not promise them.','ID documents gate the youth program. CA ID and Social Security card work is part of TRACE\'s Community/Mobility domain, so start it early.','The DOR side needs full VR client status, which is currently waitlisted for new applicants.'],
+ phones:[['Main','(619) 231-5990'],['Youth Program Director','(619) 928-4532']],address:'4283 El Cajon Blvd., Ste. 110, San Diego, CA 92105',
+ links:[['Youth training programs (apply here)','https://www.able2work.org/programs/youthbuild/'],['Employment services for DOR clients','https://www.able2work.org/programs/employment-services-for-department-of-rehabilitation-clients/'],['CAREERworks IT training','https://www.able2work.org/careerworks/']]},
+
+{id:'a2i',g:'community',name:'Access to Independence',kind:'Independent living center',d:['il','sa','comm'],
+ one:"San Diego's independent living center: cross-disability, and run by and for people with disabilities.",
+ who:'People with any disability. The One Step at a Time Youth Transition Initiative serves ages 14 to 24. No DOR eligibility or agency referral needed.',
+ helps:['Youth transition support toward goals in employment, education, independent living skills and transportation, including practice on a driving simulator.','Also benefits and options counseling, advocacy and peer support, and equipment, supplies and case management for youth moving out of foster care or institutional settings. A good place to practice in the community what TRACE teaches in class.'],
+ refer:['The student can call or walk in and self-refer.','For the youth program, contact Diana Peloso, (619) 704-2443 ext. 236, dpeloso@accesstoindependence.org.'],
+ gotchas:['Readiness, not job placement. Pair it with DOR or TPP for actual jobs.','Independent living centers are funded to serve people at no cost, but confirm for any specific program.'],
+ phones:[['Mission Valley (main)','(619) 293-3500'],['Youth program, Diana Peloso','(619) 704-2443'],['El Centro','(760) 768-2044']],
+ address:'8885 Rio San Diego Dr., Unit 135, San Diego, CA 92108. Also 235 W. 5th Ave., Ste. 110, Escondido, and 1405 N. Imperial Ave., Ste. C, El Centro.',
+ links:[['San Diego location and youth programs','https://accesstoindependence.org/san-diego/']]},
+
+{id:'pf',g:'community',name:'Promising Futures',kind:'Day program, El Cajon',d:['il','emp','rec'],
+ one:'An El Cajon day program and residential provider for adults with intellectual and developmental disabilities, specializing in behavior support and autism.',
+ who:'Adults with intellectual and developmental disabilities. No age range is posted. Funding and vendor status are not stated on the site; day programs like this are usually arranged through the regional center.',
+ helps:['The day program blends classroom, vocational and community work: on-site vocational training at a garden, retail support, recycling, a snack shack and a donated-clothing closet, plus cooking lessons, dance, yoga, drum circle and a sensory room.','A real post-22 option for students who need a structured day and are not pursuing competitive employment right now.'],
+ refer:['Start with the student\'s SDRC service coordinator. Day programs are arranged through the IPP.','The family can call the office to ask about openings and set up a visit.'],
+ gotchas:['The website moved to promising-futures.org. The old .net address redirects there.','A day program does not replace a competitive employment goal. Keep both on the table in the IEP.'],
+ phones:[['Office','(619) 592-4850']],address:'109 E. Lexington Ave., El Cajon, CA 92020',
+ links:[['Promising Futures home','https://promising-futures.org/'],['Day program and vocational sites','https://promising-futures.org/vocational-sites/']]},
+
+{id:'bb',g:'social',name:'Best Buddies California',kind:'Nonprofit, San Diego office',d:['rec','sa','emp'],
+ one:'One-to-one friendships, jobs and leadership programs for people with intellectual and developmental disabilities.',
+ who:'People with IDD. Friendship programs also recruit peers without IDD. Free to join a program.',
+ helps:['Friendship pairs a student with a peer for regular one-to-one contact plus group events.','Best Buddies Jobs does interest-matched job placement with ongoing support for people exiting or out of school, and is DOR-vendored in California. Leadership Development trains participants to speak for themselves.'],
+ refer:['Call the San Diego office and ask which friendship option fits an 18 to 22 student in an adult transition program.','For Jobs, ask whether San Diego has jobs staff. The referral usually runs through the student\'s DOR counselor.'],
+ gotchas:['Many friendship chapters are based at schools and colleges. Ask what is active near the student.','San Diego staffing for Best Buddies Jobs was not confirmed.'],
+ phones:[['San Diego office','(619) 790-7404'],['Toll free','1-800-892-8339']],address:'3517 Camino del Rio South, Ste. 203, San Diego, CA 92108',
+ links:[['Programs in California','https://www.bestbuddies.org/california/programs'],['Office directory','https://www.bestbuddies.org/california/office-directory']]},
+
+{id:'perch',g:'social',name:"Noah's PERCH",kind:'Social club run by Noah Homes, Spring Valley',d:['rec'],
+ one:'A social group for and by adults with intellectual and developmental disabilities.',
+ who:'Adults with IDD. Membership is $99 for the calendar year, plus fees for some special outings.',
+ helps:['Monthly meet-ups, dances, picnics, beach trips and outings, plus virtual events. A ready-made social calendar for students whose friend group scattered after high school.'],
+ refer:['The student or family completes the application on the site. The committee reviews it and contacts them before adding them to the mailing list.','Questions go to the program manager, Valerie Davis, vdavis@noahhomes.org.'],
+ gotchas:['Spring Valley is a trip from City Heights. Build the route into the referral as a Community/Mobility goal.','The old PDF listed bowling, karaoke and movie nights. The current site lists dances, picnics, beach trips and virtual field trips. Check the calendar.','Cost is real: $99 a year. Mention it to families up front.'],
+ phones:[['Noah Homes','(619) 660-6200']],address:'12526 Campo Rd., Spring Valley, CA 91978',
+ links:[['Noah\'s PERCH home and calendar','https://noahsperch.org/'],['FAQ: cost and how to join','https://noahsperch.org/faq']]},
+
+{id:'shoda',g:'social',name:'The SHODA (Social Hub of Diverse Adults)',kind:'Peer social group',d:['rec','sa'],
+ one:'A peer social group for independent adults of any diagnosis.',
+ who:'Independent adults 18 and older, including autism, Asperger\'s, cerebral palsy, Down syndrome and ADHD. No fees beyond the cost of an event.',
+ helps:['Meets about twice a month: a game day at At Ease Games on Miramar Rd. and a "Meet, Greet and Eat" at a different San Diego restaurant. Low-pressure practice for conversation, planning and getting to a venue on your own.'],
+ refer:['The student joins the Meetup group and RSVPs to an event. Staff can help set up the account and plan the bus route.'],
+ gotchas:['Built for adults who attend without staff. Better as a next step than a first step.','Recent events showed 1 to 4 RSVPs. Small and quiet.','theshoda.com would not load in October 2026, and Facebook blocks link checks. The Meetup group is the working link.'],
+ phones:[],address:'Events across San Diego, mostly the Miramar area',
+ links:[['SHODA Meetup group','https://www.meetup.com/shoda-social-hub-of-diverse-aspergers-adults-meetup-group/']]},
+
+{id:'trs',g:'social',name:'City of San Diego Therapeutic Recreation Services',kind:'City Parks and Recreation, City Heights',added:true,d:['rec','comm'],
+ one:"The City's recreation program for people with disabilities, based at Park de la Cruz in City Heights, the same zip code as TRACE.",
+ who:'Children and adults ages 3 and up with any type of disability. Check the seasonal calendar for costs.',
+ helps:['Adaptive sports, recreation and leisure programs and outings led by Certified Therapeutic Recreation Specialists.','Inclusion aides can support a student who wants to join a regular program at their own neighborhood recreation center, which covers several Recreation/Leisure items at once: Parks and Rec, sport leagues, community activities.'],
+ refer:['Look at the current calendar and register online, or call the office.','For an inclusion aide at a neighborhood rec center, ask TRS for an assessment.'],
+ gotchas:['Search listings name adult clubs such as Social Motion Club (18+) and Leisure Seekers (18+), but the City page does not list them by name right now. Ask what the current adult offerings are.','Volunteer roles start at age 13, which can double as a work-experience or community-service activity.'],
+ phones:[['TRS office','(619) 525-8247']],address:'Park de la Cruz Community Center, 3901 Landis St., San Diego, CA 92105',
+ links:[['Therapeutic Recreation Services','https://www.sandiego.gov/park-and-recreation/activities/trs']]},
+
+{id:'cti-assess',g:'tools',name:'VCU CTI Free Transition Assessments',kind:'Free tools, VCU Center on Transition Innovations',d:['emp','il'],
+ one:'A curated, free list of transition assessments and goal-writing guides.',
+ who:'Staff and students. Most tools are aimed at middle and high school but adapt fine for 18 to 22. Free; a few need an account.',
+ helps:['Use before a DOR intake or an IEP so the student walks in with interests on paper. For students who do not read, the Photo Career Quiz (15 to 20 minutes) and the Pictorial Interest Inventory are picture-based.','Also listed: the O*NET Interest Profiler, the PEATC Life Skills Checklist (ages 14 to 21), and CTI guides for writing postsecondary goals, including one for students with complex support needs.'],
+ refer:['No referral. Pick a tool, run it in class, and bring the results to the DOR counselor or IEP team.'],
+ gotchas:['Skip the Virginia-only tools on the list (Pathful through the Virginia Department of Education, Virginia Wizard, Virginia Career View).','The Transition Tennessee assessment database needs a free account.'],
+ phones:[],links:[['Free Transition Assessments','https://centerontransition.org/transition/free.cfm']]},
+
+{id:'cti-gril',g:'tools',name:'Get Ready for Independent Living',kind:'Free online course, VCU CTI',d:['il','comm'],
+ one:'A free, self-paced online course for students, with a facilitator\'s guide for teaching it to a group.',
+ who:'Students in grade 8 and up, plus educators, providers and families. Free. You register to enter the course.',
+ helps:['Four lessons: decision making, healthy living, transportation, and financial management (budgets, checking and savings accounts, credit cards). Videos are captioned with transcripts.','The facilitator\'s guide lets you run it with a small group or a whole class, in person or online.'],
+ refer:['Register on the course page. For group use, download the facilitator\'s guide linked there.'],
+ gotchas:['The old PDF described separate student (about 10 hours) and educator (about 5 hours) versions with no registration. The current page shows one course, four lessons, flexible length, and a Register button.','The 10 recertification points are designed around Virginia licensure and need administrator approval. Do not count on them in California.','Swap Virginia agencies for DOR and local partners when you teach it.'],
+ phones:[],links:[['Get Ready for Independent Living','https://centerontransition.org/courses/getreadyindependentliving/']]},
+
+{id:'cti-courses',g:'tools',name:'VCU CTI Online Courses for Staff',kind:'Free professional development, VCU CTI',d:['emp'],
+ one:'Free courses on setting up work-based learning and supported employment.',
+ who:'Work-Based Learning: open to educators, school counselors, adult service providers and families; self-paced. Supported Employment: a facilitated 6-week course limited to the first 100 Virginia secondary educators and providers, with no next date set.',
+ helps:['Work-Based Learning (three lessons) covers the laws behind paid and unpaid work experiences and how to develop and support them. It maps straight onto TPP and WorkAbility I placements and works as onboarding for a new para doing job placement.'],
+ refer:['Register on the course page.'],
+ gotchas:['The old PDF said the Supported Employment course is open to all with recertification points. Its page restricts registration to Virginia educators and providers.'],
+ phones:[],links:[['All CTI courses','https://centerontransition.org/courses/'],['Work-Based Learning course','https://centerontransition.org/courses/workbasedlearning/'],['Supported Employment course (Virginia only)','https://centerontransition.org/courses/supportedemployment/']]},
+
+{id:'rrtc',g:'tools',name:'VCU RRTC on Employment of Transition-Age Youth',kind:'Federally funded research center',d:['emp'],
+ one:'Free research briefs, a ready-to-teach Pre-ETS lesson toolkit, and a podcast.',
+ who:'Staff. Free.',
+ helps:['Research briefs are short, citable summaries for grant applications, advocacy documents and conversations with administrators.','The Pre-ETS Toolkit has ten lessons across job exploration, workplace readiness and community-based work experience, usable in class. The podcast works as staff PD.'],
+ refer:['No referral. This is research and curriculum, not a service.'],
+ gotchas:['The old PDF quoted "$8.8M in active grants (2024 to 2029)." That figure is not on the center\'s site. Do not cite it.'],
+ phones:[],links:[['Research briefs','https://transition.vcurrtc.org/resources/briefs.cfm'],['Pre-ETS Toolkit lessons','https://transition.vcurrtc.org/resources/preetstoolkit/'],['Podcast','https://transition.vcurrtc.org/resources/podcast.cfm']]},
+
+{id:'wfiia',g:'tools',name:'Whose Future Is It Anyway?',kind:'Free curriculum, OU Zarrow Institute',d:['sa'],
+ one:'A free, student-directed curriculum that teaches students to lead their own transition planning.',
+ who:'Students, including students with intellectual disability, with a teacher acting as coach. Free PDF downloads with no account, by permission of the author, Michael Wehmeyer.',
+ helps:['36 sessions in six sections: getting to know yourself, making decisions, community resources (for work, school, living and fun), goals, communicating, and running a meeting.','Classified as an evidence-based practice for self-determination (Rowe et al., 2021). Sessions 13 to 18 on community resources line up with TRACE\'s agency linkage work.'],
+ refer:['No referral. Download the Coach\'s Guide and the section PDFs from the curriculum page.'],
+ gotchas:['The old PDF said it includes the Self-Directed IEP module. It does not. The Self-Directed IEP is part of a different Zarrow curriculum, ChoiceMaker, on the same page.','The old PDF linked only to the Zarrow homepage. The link below goes straight to this curriculum.','Expect slow gains. One study found the biggest effect in year two.'],
+ phones:[],links:[['Whose Future Is It Anyway? downloads','https://www.ou.edu/education/zarrow/resources/curriculum#future'],['NTACT:C practice description','https://transitionta.org/effective-practices/pd-whose-future-is-it-anyway/']]},
+
+{id:'ntact',g:'tools',name:'NTACT:C',kind:'National Technical Assistance Center on Transition: The Collaborative',d:['emp','il','sa','learn'],
+ one:'The federally funded national technical assistance center on transition.',
+ who:'Staff. Free; some features need a free account.',
+ helps:['An effective practices library with evidence levels, practice descriptions with lesson plans, and toolkits on topics like resource mapping, school completion and postsecondary preparation.','Use it to check whether a practice is evidence-based before building it into a lesson or an IEP goal.'],
+ refer:['No referral. Start at Effective Practices or the toolkits list.'],
+ gotchas:['The old PDF said a "California-specific Youth Toolkit" is available here. No such toolkit was found on transitionta.org in October 2026.','Researcher-toned. More than a para needs on a busy Tuesday.'],
+ phones:[],links:[['Effective practices','https://transitionta.org/effective-practices/'],['Toolkits','https://transitionta.org/category/resource/toolkit/'],['NTACT:C home','https://transitionta.org/']]},
+
+{id:'snrf',g:'tools',name:'Special Needs Resource Foundation of San Diego',kind:'Free local directory',d:['learn','emp','comm','il','sa','rec'],
+ one:"A free directory of San Diego County disability resources, with a section on the transition to adulthood.",
+ who:'Families and staff. Free.',
+ helps:['The Transition to Adulthood list covers college disability offices, independent living, residential and supported living, self-determination supports, social groups and vocational providers, with addresses and phone numbers. When this guide does not have it, look there.'],
+ refer:['No referral. Search the list, then verify the provider directly before referring.'],
+ gotchas:['Not always current. Two resources in the old PDF came from this list and turned out to be gone (Xcite Steps and Enlightened Adventures).','Its Xcite Steps link points to a misspelled domain, a sign the list is not routinely checked.'],
+ phones:[['Foundation','(619) 685-6970']],email:'specialneeds@sandiegofamily.com',
+ links:[['Resources for the transition to adulthood','https://specialneedsresourcefoundationofsandiego.com/resources-for-transition-to-adulthood/']]}
+];
+var byId={}; R.forEach(function(r){byId[r.id]=r;});
+
+var S=[
+ {q:'Not connected to DOR yet',why:'Start the Student Services request now. It moves even under Order of Selection.',items:[['dor','First','Send the DR 203. A school signature can replace IEP copies.'],['tpp','Same time','Line up a TRACE work experience under TPP.']]},
+ {q:'Needs career interests on paper before a DOR or IEP meeting',why:'Walk in with results so the counselor can shape the plan around the student.',items:[['cti-assess','Tool','Run a picture-based interest inventory in class.'],['dor','Then','Bring the results to the DOR counselor for the Student Services Plan or IPE.']]},
+ {q:'Has or may have an intellectual or developmental disability, no regional center',why:'SDRC eligibility can take four months. Start it alongside DOR, not after.',items:[['sdrc','First','The adult student or conservator starts the Initial Contact Form.'],['dor','Same time','Keep the DR 203 moving in parallel.']]},
+ {q:'Wants paid work experience now',why:'Paid work in school is one of the strongest predictors of a job after. Several funding streams can pay for it.',items:[['tpp','First','TRACE placement under TPP or WorkAbility I.'],['dor','Also','DOR Student Services work experiences through vendors, up to 100 hours each.'],['sdrc','If SDRC client','Paid Internship Program, with the IEP and IPP teams agreeing.']]},
+ {q:'Heading to community college or continuing education',why:'WorkAbility III ties classes to a job goal. It needs DOR client status or eligibility.',items:[['wa3','Local','Contact the coordinator, or ask DSPS or the DOR counselor to refer.'],['dor','Needed','Full VR application, knowing new applicants are waitlisted.']]},
+ {q:'Out of school or exiting soon, wants the trades or IT',why:'A free credential with a clear next step into an apprenticeship.',items:[['ada','Local','Youth construction pre-apprenticeship, 17 and up, or CAREERworks IT certifications.']]},
+ {q:'Building independent living skills',why:'Teach it in class, practice it in the community.',items:[['cti-gril','Tool','Run the four-lesson course with a small group.'],['a2i','Local','Youth transition program for in-community practice and benefits counseling.']]},
+ {q:'Needs a structured day after 22, not pursuing a job right now',why:'A day program is a real pathway. Keep the employment goal in the plan anyway.',items:[['sdrc','First','Day programs are arranged through the IPP.'],['pf','Local','Day program with on-site vocational training in El Cajon.']]},
+ {q:'Isolated, lost touch with friends',why:'Social connection is part of TRACE\'s scope. None of these need DOR.',items:[['perch','Local','Monthly meet-ups and dances for adults with IDD.'],['bb','Local','One-to-one friendship matches.'],['shoda','Local','Game days and restaurant meetups for independent adults.']]},
+ {q:'Wants sports or recreation near campus',why:'Park de la Cruz is in the same zip code as TRACE.',items:[['trs','Local','Adaptive sports, programs and inclusion aides at neighborhood rec centers.']]},
+ {q:'Needs self-advocacy skills to take part in the IEP',why:'A student who has practiced speaking up gets more out of every agency on this page.',items:[['wfiia','Tool','Teach the curriculum, especially the meeting and communicating sections.'],['a2i','Local','Peer support and advocacy from people with disabilities.']]},
+ {q:'Staff need training on work-based learning',why:'Free, self-paced, and it matches how TRACE places students.',items:[['cti-courses','Tool','Work-Based Learning course.'],['rrtc','Tool','Pre-ETS Toolkit lessons to teach right away.'],['tpp','Local','Apply it on real TPP placements.']]},
+ {q:'Writing a grant or advocacy document',why:'Cite research, then local results.',items:[['rrtc','Tool','Citable research briefs.'],['ntact','Tool','Evidence levels for specific practices.']]},
+ {q:'Need a provider this guide does not list',why:'Use the local directory, then verify before you refer.',items:[['snrf','Local','Transition to Adulthood directory.']]}
+];
+
+var C=[
+ ['TRACE serves ages 18 to 22','The old PDF said "high school to employment." TRACE students are 18 to 22. Call them students, not high school students.','TRACE program materials'],
+ ['TRACE already runs TPP','The old PDF said to "confirm TRACE\'s active TPP agreement" and called it a priority to establish. TRACE already operates TPP, WorkAbility I and District-Hire.','TRACE staff; SDUSD Transition Services brochure'],
+ ['Six domains, not three','The old PDF referred to "all three transition domains." TRACE names six: Adult Learning, Employment, Community/Mobility, Independent Living, Self-Advocacy and Recreation/Leisure.','TRACE Domains document'],
+ ['DOR is not only for students with an IEP or 504','Student Services covers students 16 to 21 with an IEP, a 504, a disability, or regarded as having one, and continues for 22-year-olds still in special education. Full VR has no age limit and needs no IEP.','dor.ca.gov Student Services; 9 CCR 7026.5'],
+ ['Order of Selection is real, and Student Services is exempt','All newly eligible VR applicants are currently waitlisted. Student Services stays open. The old PDF did not mention either.','dor.ca.gov Order of Selection'],
+ ['DOR office locator link was dead','dor.ca.gov/Home/OfficeLocator returns 404. Use the Contact Us page, or the San Diego office at (619) 767-2100.','Link check, October 2026'],
+ ['WorkAbility III does not require you to go to DOR first','SDCCD accepts DOR clients or people eligible for DOR, and allows self-referral. The named coordinator is inconsistent across SDCCD pages, so call the office.','sdccd.edu WorkAbility III pages'],
+ ['Able-Disabled Advocacy services corrected','Youth programs are a 10-week construction pre-apprenticeship and IT certifications. Mental health and housing services for youth are not on the current site. DOR services need a DOR counselor referral.','able2work.org'],
+ ['Xcite Steps removed','xcitesteps.com is a parked domain, Yelp lists it as closed, and the company was acquired in 2018. Replaced with San Diego Regional Center, the biggest gap in the old guide.','Link check and search, October 2026'],
+ ['Enlightened Adventures removed','ErikaJunge.com does not exist in DNS, and the phone number differs between sources (5516 versus 5616). Replaced with City of San Diego Therapeutic Recreation Services to cover Recreation/Leisure.','Link check, October 2026'],
+ ['The SHODA has a working link','The old PDF said to search Facebook. The SHODA runs a public Meetup group with events, for adults 18 and up.','meetup.com'],
+ ['VCU course links and details fixed','Two CTI course links were 404. Get Ready for Independent Living is one 4-lesson course with registration. The Supported Employment course is limited to Virginia educators.','centerontransition.org'],
+ ['Whose Future Is It Anyway? corrected','The real title ends in "Anyway." It does not include the Self-Directed IEP, which belongs to ChoiceMaker. The link now goes to the curriculum, not the Zarrow homepage.','ou.edu Zarrow curriculum page'],
+ ['No NTACT:C California Youth Toolkit','The old PDF claimed one. None was found on transitionta.org.','transitionta.org search, October 2026'],
+ ['Promising Futures moved domains','promisingfutures.net now redirects to promising-futures.org. Address and phone confirmed.','promising-futures.org'],
+ ["Noah's PERCH details updated",'Membership costs $99 a year. Listed activities are dances, picnics, beach trips and virtual events, not the bowling and karaoke the old PDF named.','noahsperch.org FAQ']
+];
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function tagsHTML(ds){return ds.map(function(k){return '<span class="tag-d" style="background:'+D[k].color+'">'+D[k].name+'</span>';}).join('');}
+var CHECK='<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="7" fill="#2E7D4F"/><path d="M3.8 7.2l2.1 2.1 4.3-4.6" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+/* hero bars */
+(function(){
+  var counts={}; ORDER.forEach(function(k){counts[k]=0;}); R.forEach(function(r){r.d.forEach(function(k){counts[k]++;});});
+  var max=Math.max.apply(null,ORDER.map(function(k){return counts[k];}));
+  var g=document.getElementById('barsG'), h='';
+  ORDER.forEach(function(k,i){
+    var y=i*55, w=Math.round(150+ (counts[k]/max)*300);
+    h+='<rect class="bar" x="0" y="'+y+'" width="'+w+'" height="44" rx="22" fill="'+D[k].hex+'"/>';
+    h+='<text x="20" y="'+(y+28)+'">'+D[k].name+'</text>';
+    h+='<text x="'+(w-20)+'" y="'+(y+28)+'" text-anchor="end">'+counts[k]+'</text>';
+  });
+  g.innerHTML=h;
+})();
+
+/* legend + filter */
+var active=null;
+var legend=document.getElementById('legend'), fb=document.getElementById('filterbar');
+legend.innerHTML=ORDER.map(function(k){return '<button type="button" data-d="'+k+'" aria-pressed="false" style="background:'+D[k].color+'"><b>'+D[k].name+'</b><span>'+D[k].blurb+'</span></button>';}).join('');
+fb.innerHTML='<span class="status" id="fstatus">Showing all 18</span>'+ORDER.map(function(k){return '<button type="button" class="chip" data-d="'+k+'" aria-pressed="false" style="background:'+D[k].color+'">'+D[k].name+'</button>';}).join('')+'<button type="button" class="chip clear" data-d="" aria-pressed="false">Show all</button>';
+function setFilter(k, jump){
+  active=(k&&active!==k)?k:null;
+  document.querySelectorAll('[data-d]').forEach(function(b){ if(b.classList.contains('clear')) return; b.setAttribute('aria-pressed', String(b.getAttribute('data-d')===active)); });
+  var n=0;
+  document.querySelectorAll('.card').forEach(function(c){var on=!active||c.getAttribute('data-ds').split(' ').indexOf(active)>-1; c.classList.toggle('dim',!on); if(on)n++;});
+  document.getElementById('fstatus').textContent=active?(n+' serve '+D[active].name):'Showing all 18';
+  if(jump) document.getElementById('resources').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+}
+legend.addEventListener('click',function(e){var b=e.target.closest('button'); if(b) setFilter(b.getAttribute('data-d'),true);});
+fb.addEventListener('click',function(e){var b=e.target.closest('button'); if(b) setFilter(b.getAttribute('data-d'),false);});
+
+/* groups and cards */
+var groupsEl=document.getElementById('groups');
+groupsEl.innerHTML=G.map(function(g){
+  var cards=R.filter(function(r){return r.g===g.id;});
+  return '<div class="group reveal"><div class="group-head"><div><h3 id="g-'+g.id+'">'+g.name+'</h3><p>'+g.blurb+'</p></div><div class="rail-ctrl"><button type="button" data-rail="'+g.id+'" data-dir="-1" aria-label="Scroll '+g.name+' left"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button><button type="button" data-rail="'+g.id+'" data-dir="1" aria-label="Scroll '+g.name+' right"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button></div></div>'+
+  '<ul class="rail" id="rail-'+g.id+'" role="list" aria-labelledby="g-'+g.id+'" tabindex="0" style="list-style:none">'+cards.map(function(r){
+    return '<li class="card" data-ds="'+r.d.join(' ')+'" id="card-'+r.id+'"><div class="kind">'+esc(r.kind)+(r.added?' <span class="flag">New</span>':'')+'</div><h4>'+esc(r.name)+'</h4><p class="one">'+esc(r.one)+'</p><p class="who">'+esc(r.who.length>170?r.who.slice(0,r.who.lastIndexOf(' ',165))+'...':r.who)+'</p><div class="tags">'+tagsHTML(r.d)+'</div><div class="card-foot"><span class="checked">'+CHECK+'Link checked Oct 2026</span><button type="button" class="open" data-open="'+r.id+'">Open notes<span class="sr-only"> for '+esc(r.name)+'</span></button></div></li>';
+  }).join('')+'</ul></div>';
+}).join('');
+
+function railButtons(id){
+  var rail=document.getElementById('rail-'+id); if(!rail) return;
+  var bs=document.querySelectorAll('[data-rail="'+id+'"]');
+  var atStart=rail.scrollLeft<4, atEnd=rail.scrollLeft+rail.clientWidth>=rail.scrollWidth-4;
+  bs[0].disabled=atStart; bs[1].disabled=atEnd;
+}
+G.forEach(function(g){var rail=document.getElementById('rail-'+g.id); rail.addEventListener('scroll',function(){railButtons(g.id);},{passive:true}); railButtons(g.id);});
+window.addEventListener('resize',function(){G.forEach(function(g){railButtons(g.id);});});
+document.addEventListener('click',function(e){
+  var b=e.target.closest('[data-rail]'); if(!b) return;
+  var rail=document.getElementById('rail-'+b.getAttribute('data-rail'));
+  rail.scrollBy({left:(rail.clientWidth*0.85)*Number(b.getAttribute('data-dir')),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+});
+
+/* dialog */
+var dlg=document.getElementById('dlg'), lastFocus=null;
+function contactHTML(r){
+  var h='<aside class="contact" aria-label="Contacts"><dl>';
+  (r.phones||[]).forEach(function(p){h+='<dt>'+esc(p[0])+'</dt><dd><a href="'+tel(p[1])+'">'+esc(p[1])+'</a></dd>';});
+  if(r.address) h+='<dt>Address</dt><dd>'+esc(r.address)+'</dd>';
+  if(r.email) h+='<dt>Email</dt><dd><a href="mailto:'+esc(r.email)+'">'+esc(r.email).replace('@','@<wbr>').replace(/_/g,'_<wbr>')+'</a></dd>';
+  h+='<dt>Links</dt><dd><ul class="linklist">'+r.links.map(function(l){return '<li><a href="'+esc(l[1])+'" target="_blank" rel="noopener">'+esc(l[0])+'<span class="sr-only"> (opens in a new tab)</span></a></li>';}).join('')+'</ul></dd>';
+  h+='</dl><div class="checked">'+CHECK+'Links checked October 2026</div></aside>';
+  return h;
+}
+function openR(id){
+  var r=byId[id]; if(!r) return;
+  lastFocus=document.activeElement;
+  document.getElementById('dlg-kind').innerHTML=esc(r.kind)+(r.added?' <span class="flag">New to this guide</span>':'');
+  document.getElementById('dlg-title').textContent=r.name;
+  document.getElementById('dlg-tags').innerHTML=tagsHTML(r.d);
+  var body='<div><section><h3>What it is</h3><p>'+esc(r.one)+'</p></section>'+
+    '<section><h3>Who it is for</h3><p>'+esc(r.who)+'</p></section>'+
+    '<section><h3>How it helps a TRACE student</h3>'+r.helps.map(function(p){return '<p>'+esc(p)+'</p>';}).join('')+'</section>'+
+    '<section><h3>How to refer: first step</h3><ol>'+r.refer.map(function(p){return '<li>'+esc(p)+'</li>';}).join('')+'</ol></section>'+
+    '<section><h3>Watch out for</h3><ul class="gotchas">'+r.gotchas.map(function(p){return '<li>'+esc(p)+'</li>';}).join('')+'</ul></section></div>'+contactHTML(r);
+  document.getElementById('dlg-body').innerHTML=body;
+  if(typeof dlg.showModal==='function'){dlg.showModal();}else{dlg.setAttribute('open','');}
+  dlg.scrollTop=0;
+  document.getElementById('dlg-close').focus();
+}
+function closeR(){ if(dlg.open){ if(dlg.close) dlg.close(); else dlg.removeAttribute('open'); } }
+dlg.addEventListener('close',function(){ if(lastFocus&&lastFocus.focus) lastFocus.focus(); });
+document.getElementById('dlg-close').addEventListener('click',closeR);
+dlg.addEventListener('click',function(e){ if(e.target===dlg) closeR(); });
+document.addEventListener('click',function(e){var b=e.target.closest('[data-open]'); if(b){e.preventDefault(); openR(b.getAttribute('data-open'));}});
+
+/* matcher */
+var sit=document.getElementById('situations'), ans=document.getElementById('answer');
+sit.innerHTML=S.map(function(s,i){return '<button type="button" aria-pressed="false" data-s="'+i+'">'+esc(s.q)+'</button>';}).join('');
+sit.addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b) return;
+  sit.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});
+  var s=S[+b.getAttribute('data-s')];
+  ans.innerHTML='<h3>'+esc(s.q)+'</h3><p class="why">'+esc(s.why)+'</p><ol>'+s.items.map(function(it){
+    var r=byId[it[0]], cls=r.g==='tools'?'tool':(it[1]==='Local'?'local':'');
+    return '<li><span class="tag '+cls+'">'+esc(it[1])+'</span><div><button type="button" class="linkbtn" data-open="'+r.id+'">'+esc(r.name)+'</button><p>'+esc(it[2])+'</p></div></li>';
+  }).join('')+'</ol>';
+});
+
+/* corrections */
+document.getElementById('corrections').innerHTML=C.map(function(c){return '<article class="note reveal"><h3>'+esc(c[0])+'</h3><p>'+esc(c[1])+'</p><span class="src">Checked against: '+esc(c[2])+'</span></article>';}).join('');
+
+/* nav border */
+var nav=document.querySelector('.nav');
+function onScroll(){nav.classList.toggle('scrolled',window.scrollY>8);}
+window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+/* reveal */
+var els=document.querySelectorAll('.reveal');
+if(isStatic||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(el){el.classList.add('in');});}
+else{
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in'); io.unobserve(en.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:0.08});
+  els.forEach(function(el){io.observe(el);});
+}
+
+/* deep link: #r-<id> opens a card */
+var m=location.hash.match(/^#r-([\w-]+)/); if(m&&byId[m[1]]) setTimeout(function(){openR(m[1]);},50);
+if(/[?&]open=([\w-]+)/.test(location.search)) openR(RegExp.$1);
+})();
+</script>
+</body>
+</html>

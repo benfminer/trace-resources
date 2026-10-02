@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRACE Staff Resources</title>
+<meta name="description" content="Two staff references for TRACE San Diego: a referral guide and a searchable hub of free transition tools.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --canvas: #F4F2ED; --ink: #141414; --muted: #5B5B57; --on-dark: #F4F2ED; --on-dark-muted: #B9B6AE;
+    --amber: #F2B33D; --blue: #9FC5E8; --rose: #F4B6B6;
+    --display: "Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: var(--ink); color: var(--on-dark); font-family: var(--body); line-height: 1.5; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
+  header.wrap { padding-top: clamp(56px, 10vw, 120px); padding-bottom: clamp(36px, 5vw, 64px); }
+  .kicker { font-weight: 600; color: var(--amber); margin: 0 0 16px; }
+  h1 { font-family: var(--display); font-weight: 800; font-size: clamp(2.6rem, 8vw, 6rem); line-height: .95; letter-spacing: -0.045em; margin: 0; max-width: 12ch; }
+  .lede { color: var(--on-dark-muted); font-size: clamp(1.05rem, 1.6vw, 1.2rem); max-width: 56ch; margin: 24px 0 0; }
+  .doors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  main.doors { padding-bottom: clamp(56px, 8vw, 96px); }
+  .door { display: flex; flex-direction: column; justify-content: space-between; min-height: 340px; padding: clamp(22px, 3vw, 36px); border-radius: 28px; color: var(--ink); text-decoration: none; transition: transform .35s cubic-bezier(.2,.7,.2,1); }
+  .door:hover { transform: translateY(-6px); }
+  .door:focus-visible { outline: 3px solid var(--amber); outline-offset: 4px; }
+  .door.guide { background: var(--rose); }
+  .door.hub { background: var(--blue); }
+  .door .tag { font-weight: 600; font-size: .95rem; margin: 0; }
+  .door h2 { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 4.2vw, 3.4rem); line-height: 1; letter-spacing: -0.035em; margin: 18px 0 14px; }
+  .door p.desc { margin: 0; max-width: 44ch; font-size: 1.05rem; }
+  .door .go { display: inline-flex; align-items: center; gap: 10px; margin-top: 28px; font-weight: 600; background: var(--ink); color: var(--on-dark); padding: 12px 20px; border-radius: 999px; align-self: flex-start; }
+  footer.wrap { padding-top: 28px; padding-bottom: 40px; }
+  footer { border-top: 1px solid rgba(244,242,237,.14); color: var(--on-dark-muted); font-size: .92rem; }
+  footer p { margin: 0 0 6px; }
+  @media (max-width: 760px) { .doors { grid-template-columns: 1fr; } .door { min-height: 260px; } }
+  @media (prefers-reduced-motion: reduce) { .door { transition: none; } .door:hover { transform: none; } }
+</style>
+</head>
+<body>
+  <header class="wrap">
+    <p class="kicker">TRACE San Diego · staff reference</p>
+    <h1>Where to send them, and what to use.</h1>
+    <p class="lede">Two references for paras, case managers and teachers working with TRACE students, ages 18 to 22. Every link checked by hand in October 2026.</p>
+  </header>
+  <main class="wrap doors">
+    <a class="door guide" href="referral-guide/">
+      <div>
+        <p class="tag">18 local referrals</p>
+        <h2>Referral Guide</h2>
+        <p class="desc">Who to call, and in what order. DOR, the regional center, community programs and recreation, with who qualifies and the exact first step for each.</p>
+      </div>
+      <span class="go">Open the guide <span aria-hidden="true">&rarr;</span></span>
+    </a>
+    <a class="door hub" href="hub/">
+      <div>
+        <p class="tag">94 free resources</p>
+        <h2>Resource Hub</h2>
+        <p class="desc">A searchable list of free tools, agencies and handouts. Filter by topic, reading load, how the student responds, and where it applies.</p>
+      </div>
+      <span class="go">Open the hub <span aria-hidden="true">&rarr;</span></span>
+    </a>
+  </main>
+  <footer class="wrap">
+    <p>A staff reference, not an official San Diego Unified publication.</p>
+    <p>TRACE · 4063 Polk Ave., San Diego, CA 92105 · (619) 344-6120</p>
+  </footer>
+</body>
+</html>
